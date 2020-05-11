@@ -1,0 +1,32 @@
+
+
+        <div class="container">
+            <table class="table table-striped table-hover table-bordered"
+                   *ngIf='patients && patients.length'>
+                <thead class="thead thead-light">
+                    <tr>                       
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>DOB</th>
+                        <th>Address </th>
+                        <th>Phone</th>
+                        <th>Email Address</th>
+                        <th>Gender</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let patient of patients'>                       
+                        <td>{{patient.firstName}}</td>
+                        <td>{{patient.lastName}}</td>
+                        <td data-date-format="mm/dd/yyyy">{{patient.dob}}</td>
+                        <td>{{patient.Address}}</td>
+                        <td>{{patient.contact}}</td>
+                        <td>{{patient.contact.email}}</td>
+                        <td>{{patient.gender}}</td>                                     
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+   
+   
