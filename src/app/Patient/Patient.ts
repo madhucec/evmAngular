@@ -1,3 +1,7 @@
+import {  IAddress } from './Address';
+import { IContact } from './Contact';
+import { IOffice } from './Office';
+
 
 
 export interface IPatient{
@@ -5,9 +9,10 @@ export interface IPatient{
     firstName: String;
     lastName: String;
     gender: String;
-    dob: Date;
-    address: PaymentAddress;
-    email: String;
-    phone: String;
+    dob: String;
+    ssn:String;
+    address?: IAddress;
+    contact:IContact;
+    office:IOffice;
 
 }

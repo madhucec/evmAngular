@@ -1,7 +1,7 @@
 
 import { Component } from '@angular/core';
-import { PatientService } from './Patient/PatientService';
-import { IPatient } from './Patient/Patient';
+import {RouterModule} from '@angular/router'
+
 
 @Component({
   selector: 'pms-root',
@@ -12,9 +12,6 @@ export class AppComponent{
   title:string='PMS';
   searchText:string;  
   errorMessage:string;
-  constructor(private patientService:PatientService ){
-       
-  }
-
+ 
  
 }

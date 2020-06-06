@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { IPatient } from './Patient';
 import { PatientService } from './PatientService';
 import { ActivatedRoute } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({   
     templateUrl: './PatientSearchComponent.html'
@@ -31,4 +32,8 @@ export class PatientSearchComponent{
         let searchText= this.route.snapshot.paramMap.get('searchText');
         this.searchPatient(searchText);
     }
+
+
+
+
 }

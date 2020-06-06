@@ -9,6 +9,7 @@ import { IPatient } from './Patient';
 export class PatientService{
 
     patientServiceUrl="http://localhost:8200/patient/search";
+    patientRegisterUrl="http://localhost:8200/patient/register"
     constructor(private httpClient: HttpClient){
 
     }
@@ -24,6 +25,20 @@ export class PatientService{
         catchError(this.handleError)
     );
  
+}
+
+postPatient_deb(patient:IPatient):Observable<IPatient>{
+
+  return this.httpClient.post<IPatient>(this.patientRegisterUrl, patient).pipe(
+    tap(data=>console.log('ALL:'+JSON.stringify(data))),
+catchError(this.handleError));
+
+}
+
+postPatient(patient:IPatient):Observable<any>{
+
+  return this.httpClient.post(this.patientRegisterUrl, patient);
+
 }
 handleError(err: HttpErrorResponse) {
     let errorMessage = '';

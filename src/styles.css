@@ -20,3 +20,34 @@ div.card {
   border-style: solid;
   border-color: red;
 }
+
+.ng-invalid:not(form).ng-touched{
+  border: 1px solid red;
+}
+
+label {
+  font-size: small;
+}
+
+.errorField{
+  font-size: smaller;
+}
+
+legend{
+  font-size: medium;
+}
+h2, h4{
+  font-family: 'Times New Roman', Times, serif, sans-serif;
+}
+body{
+  background-color: #e9f2f0;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: medium;
+}
+
+select{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 2px;
+}
