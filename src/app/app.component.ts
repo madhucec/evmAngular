@@ -1,5 +1,9 @@
 
+<<<<<<< HEAD
 import { Component, OnChanges, SimpleChanges } from '@angular/core';
+=======
+import { Component } from '@angular/core';
+>>>>>>> 773b7696c00598fa60846ff5b95aa38db43fc312
 import {RouterModule} from '@angular/router'
 
 

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+<<<<<<< HEAD
 import { IPatient } from '../Model/Patient';
 import { NgForm } from '@angular/forms';
 import { IAddress } from '../Model/Address';
@@ -9,6 +10,19 @@ import { IOffice } from '../Model/Office';
 import { DatePipe } from '@angular/common';
 import { HttpErrorResponse } from '@angular/common/http';
 import { ErrorResponse } from '../Model/ErrorResponse';
+=======
+import { IPatient } from './Patient';
+import { NgForm } from '@angular/forms';
+import { IAddress } from './Address';
+import { IContact } from './Contact';
+import { IPhone } from './Phone';
+import { PatientService } from './PatientService';
+import { IOffice } from './Office';
+import { DatePipe } from '@angular/common';
+import { HttpErrorResponse } from '@angular/common/http';
+import { Hero } from './Hero';
+import { ErrorResponse } from './ErrorResponse';
+>>>>>>> 773b7696c00598fa60846ff5b95aa38db43fc312
 
 @Component({
     selector:'pms-patientregister',
@@ -51,7 +65,10 @@ export class PatientRegisterComponent{
     }
 
    patient:IPatient={
+<<<<<<< HEAD
         id:0,
+=======
+>>>>>>> 773b7696c00598fa60846ff5b95aa38db43fc312
         firstName: "",
         lastName: "",
         gender: "",
@@ -59,8 +76,12 @@ export class PatientRegisterComponent{
         ssn:"",
         address: this.address,
         contact:this.contact,
+<<<<<<< HEAD
         office:this.office,
         bookedSlots:null
+=======
+        office:this.office
+>>>>>>> 773b7696c00598fa60846ff5b95aa38db43fc312
     }
 
     onHttpError(httpResponseError:any){

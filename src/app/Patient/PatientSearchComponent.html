@@ -16,7 +16,11 @@
                 </thead>
                 <tbody>
                     <tr *ngFor='let patient of patients'>                       
+<<<<<<< HEAD
                         <td class="text-capitalize"> <a  [routerLink]="['/patientDetail', patient.id]">  {{patient.firstName}} </a></td>
+=======
+                        <td class="text-capitalize">{{patient.firstName}}</td>
+>>>>>>> 773b7696c00598fa60846ff5b95aa38db43fc312
                         <td class="text-capitalize">{{patient.lastName}}</td>
                         <td data-date-format="mm/dd/yyyy">{{patient.dob}}</td>
                         <td class="text-capitalize">{{patient.address?.firstLine}} {{patient.address?.secondLine}}, {{patient.address?.city}}, {{patient.address?.zip}}, {{patient.address?.state}}</td>

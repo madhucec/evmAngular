@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Component } from '@angular/core';
 import { IPatient } from '../Model/Patient';
 import { PatientService } from './PatientService';
@@ -36,4 +37,8 @@ export class PatientDetailComponent{
             error: err=>this.errorMessage=err
         });
     }
+=======
+export class PatientDetailComponent{
+    
+>>>>>>> 773b7696c00598fa60846ff5b95aa38db43fc312
 }

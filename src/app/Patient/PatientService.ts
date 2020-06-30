@@ -9,8 +9,12 @@ import { IPatient } from '../Model/Patient';
 export class PatientService{
    
 
+<<<<<<< HEAD
     patientSearchUrl="http://localhost:8200/patient/search";
     patientDetailUrl="http://localhost:8200/patient/details";
+=======
+    patientServiceUrl="http://localhost:8200/patient/search";
+>>>>>>> 773b7696c00598fa60846ff5b95aa38db43fc312
     patientRegisterUrl="http://localhost:8200/patient/register"
     constructor(private httpClient: HttpClient){
 
@@ -39,6 +43,17 @@ export class PatientService{
  
 }
 
+<<<<<<< HEAD
+=======
+postPatient_deb(patient:IPatient):Observable<IPatient>{
+
+  return this.httpClient.post<IPatient>(this.patientRegisterUrl, patient).pipe(
+    tap(data=>console.log('ALL:'+JSON.stringify(data))),
+catchError(this.handleError));
+
+}
+
+>>>>>>> 773b7696c00598fa60846ff5b95aa38db43fc312
 postPatient(patient:IPatient):Observable<any>{
 
   return this.httpClient.post(this.patientRegisterUrl, patient);
