@@ -26,11 +26,7 @@ div.card {
 }
 
 label {
-<<<<<<< HEAD
-  font-size: smaller;
-=======
   font-size: small;
->>>>>>> 773b7696c00598fa60846ff5b95aa38db43fc312
 }
 
 .errorField{
