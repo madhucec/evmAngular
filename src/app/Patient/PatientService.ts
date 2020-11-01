@@ -9,9 +9,9 @@ import { IPatient } from '../Model/Patient';
 export class PatientService{
    
 
-    patientSearchUrl="http://localhost:8200/patient/search";
-    patientDetailUrl="http://localhost:8200/patient/details";
-    patientRegisterUrl="http://localhost:8200/patient/register"
+    patientSearchUrl="http://localhost:8200/pms-service/patient/search";
+    patientDetailUrl="http://localhost:8200/pms-service/patient/details";
+    patientRegisterUrl="http://localhost:8200/pms-service/patient/register"
     constructor(private httpClient: HttpClient){
 
     }
