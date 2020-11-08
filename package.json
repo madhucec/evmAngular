@@ -19,10 +19,10 @@
     "@angular/platform-browser": "~9.1.1",
     "@angular/platform-browser-dynamic": "~9.1.1",
     "@angular/router": "~9.1.1",
+    "angular-oauth2-oidc": "^10.0.3",
     "bootstrap": "^4.4.1",
     "font-awesome": "^4.7.0",
-    "keycloak-angular": "^8.0.1",
-    "keycloak-js": "^11.0.2",
+    "oidc-client": "^1.10.1",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

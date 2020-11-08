@@ -6,13 +6,10 @@ import { PatientSearchComponent } from './Patient/PatientSearchComponent';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClient,HttpParams } from '@angular/common/http';
 import { PatientRegisterComponent } from './Patient/PatientRegisterComponent';
-
 import {RouterModule} from '@angular/router'
 import { HomeComponent } from './home/homeComponent';
 import { PatientDetailComponent } from './Patient/PatientDetailComponent';
-import { SigninRedirectCallbackComponent } from 'app/home/signin-redirect-callback.component';
-import { SignoutRedirectCallbackComponent } from 'app/home/signout-redirect-callback.component';
-
+import { OAuthModule } from 'angular-oauth2-oidc';
 
 
 @NgModule({
@@ -23,8 +20,7 @@ import { SignoutRedirectCallbackComponent } from 'app/home/signout-redirect-call
     PatientDetailComponent,
     HomeComponent
   ],
-  
-  imports: [
+   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
@@ -33,13 +29,18 @@ import { SignoutRedirectCallbackComponent } from 'app/home/signout-redirect-call
       {path:'patientSearch/:searchText', component: PatientSearchComponent},
       {path:'patientDetail/:id', component:PatientDetailComponent},
       {path:'home', component:HomeComponent},
-      { path: 'signin-callback', component: SigninRedirectCallbackComponent },
-      { path: 'signout-callback', component: SignoutRedirectCallbackComponent },
       {path:'', redirectTo:'home', pathMatch:'full'},
       {path:'**', redirectTo:'home', pathMatch:'full'}
 
       ]
-    )
+    ),
+    OAuthModule.forRoot({
+      resourceServer: {
+          allowedUrls: ['http://localhost:8200/*'],
+          sendAccessToken: true
+      }
+  })
+
   ],
   bootstrap: [AppComponent]
 })
