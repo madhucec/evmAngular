@@ -3,15 +3,17 @@ import { NgModule, APP_INITIALIZER } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import { PatientSearchComponent } from './Patient/PatientSearchComponent';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpClient,HttpParams } from '@angular/common/http';
 import { PatientRegisterComponent } from './Patient/PatientRegisterComponent';
 
 import {RouterModule} from '@angular/router'
 import { HomeComponent } from './home/homeComponent';
 import { PatientDetailComponent } from './Patient/PatientDetailComponent';
-import { SigninRedirectCallbackComponent } from 'app/home/signin-redirect-callback.component';
-import { SignoutRedirectCallbackComponent } from 'app/home/signout-redirect-callback.component';
+import { SigninRedirectCallbackComponent } from './home/signin-redirect-callback.component';
+import { SignoutRedirectCallbackComponent } from './home/signout-redirect-callback.component';
+import { AuthInterceptorService } from './Services/AuthInterceptorService';
+import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
 
 
 
@@ -21,9 +23,12 @@ import { SignoutRedirectCallbackComponent } from 'app/home/signout-redirect-call
     PatientSearchComponent,
     PatientRegisterComponent, 
     PatientDetailComponent,
-    HomeComponent
+    HomeComponent,
+    UnauthorizedComponent
   ],
-  
+  providers:[
+    {provide: HTTP_INTERCEPTORS, useClass:AuthInterceptorService, multi:true}
+    ],
   imports: [
     BrowserModule,
     FormsModule,
@@ -33,10 +38,11 @@ import { SignoutRedirectCallbackComponent } from 'app/home/signout-redirect-call
       {path:'patientSearch/:searchText', component: PatientSearchComponent},
       {path:'patientDetail/:id', component:PatientDetailComponent},
       {path:'home', component:HomeComponent},
+      {path:'unauthorized', component:UnauthorizedComponent},
       { path: 'signin-callback', component: SigninRedirectCallbackComponent },
       { path: 'signout-callback', component: SignoutRedirectCallbackComponent },
       {path:'', redirectTo:'home', pathMatch:'full'},
-      {path:'**', redirectTo:'home', pathMatch:'full'}
+      {path:'**', redirectTo:'home', pathMatch:'full'},
 
       ]
     )

@@ -3,15 +3,16 @@ import { HttpClient, HttpErrorResponse, HttpParams} from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
 import {tap, catchError} from 'rxjs/operators'
 import { IPatient } from '../Model/Patient';
+import { AuthConstants } from '../AuthConstants';
 
 
 @Injectable({providedIn:'root'})
 export class PatientService{
    
 
-    patientSearchUrl="http://localhost:8200/pms-service/patient/search";
-    patientDetailUrl="http://localhost:8200/pms-service/patient/details";
-    patientRegisterUrl="http://localhost:8200/pms-service/patient/register"
+    patientSearchUrl= AuthConstants.apiRoot+"patient/search";
+    patientDetailUrl= AuthConstants.apiRoot+"patient/details";
+    patientRegisterUrl= AuthConstants.apiRoot+"patient/register"
     constructor(private httpClient: HttpClient){
 
     }

@@ -26,6 +26,10 @@ login(){
   this.authService.login();
 }
 
+logout(){
+  this.authService.completeLogout();
+}
+
   ngOnInit(): void {
     //this.authService.login();
     this.authService.isLoggedIn().then(loggedin=> this.isLoggedIn=loggedin)

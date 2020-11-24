@@ -4,13 +4,14 @@ import { HttpParams, HttpClient, HttpErrorResponse } from '@angular/common/http'
 import { throwError, Observable } from 'rxjs';
 import { tap, catchError} from 'rxjs/operators';
 import { BookRequest } from '../Model/BookRequest';
+import { AuthConstants } from '../AuthConstants';
 
 @Injectable({providedIn:'root'})
 export class BookingService{
 
 
-    getCalenderUrl="http://localhost:8200/pms-service/calender";
-    bookAppointmentUrl="http://localhost:8200/pms-service/book";
+    getCalenderUrl= AuthConstants.apiRoot+"calender";
+    bookAppointmentUrl= AuthConstants.apiRoot+"book";
 
     constructor(private httpClient: HttpClient){
 
