@@ -40,6 +40,12 @@ logout(){
     throw new Error("Method not implemented.");
   }
   
+  isClientAdmin():boolean{
  
+   return this.authService.authContext && this.authService.authContext.isClientAdmin;
+  }
  
+  isPMSAdmin(): boolean{
+    return this.authService.authContext && this.authService.authContext.isPMSadmin;
+  }
 }

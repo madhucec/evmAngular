@@ -14,6 +14,10 @@ import { SigninRedirectCallbackComponent } from './home/signin-redirect-callback
 import { SignoutRedirectCallbackComponent } from './home/signout-redirect-callback.component';
 import { AuthInterceptorService } from './Services/AuthInterceptorService';
 import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
+import { UserComponent } from './user/user.component';
+import { AddUserComponent } from './add-user.component';
+import { ClientAdminRouteGuard } from './shared/clientadmin-route-guard';
+import { AuthGuard } from './shared/Auth-guard';
 
 
 
@@ -24,7 +28,9 @@ import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
     PatientRegisterComponent, 
     PatientDetailComponent,
     HomeComponent,
-    UnauthorizedComponent
+    UnauthorizedComponent,
+    UserComponent,
+    AddUserComponent
   ],
   providers:[
     {provide: HTTP_INTERCEPTORS, useClass:AuthInterceptorService, multi:true}
@@ -35,9 +41,11 @@ import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
     HttpClientModule,
     RouterModule.forRoot(
       [{path:'patientRegister', component: PatientRegisterComponent},
+      {path:'manageUsers', component: UserComponent, canActivate:[ClientAdminRouteGuard]},
+      {path:'addUser', component: AddUserComponent},
       {path:'patientSearch/:searchText', component: PatientSearchComponent},
       {path:'patientDetail/:id', component:PatientDetailComponent},
-      {path:'home', component:HomeComponent},
+      {path:'home', component:HomeComponent, canActivate: [AuthGuard]},
       {path:'unauthorized', component:UnauthorizedComponent},
       { path: 'signin-callback', component: SigninRedirectCallbackComponent },
       { path: 'signout-callback', component: SignoutRedirectCallbackComponent },

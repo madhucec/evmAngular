@@ -36,6 +36,30 @@
           </div>
         </div>
 
+        <div class="dropdown" *ngIf="isClientAdmin()" > 
+          <a class="nav-item nav-link dropdown-toggle" id="officeDropdown"
+           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
+            Admin</a>
+          <div class="dropdown-menu" aria-labelledby="officeDropdown">
+            <a class="dropdown-item"  [routerLink]="['/manageUsers']">Mange Users</a>
+            <a class="dropdown-item" href="#">Remove User</a>
+            <a class="dropdown-item" href="#">Modify User</a>
+          </div>
+        </div>
+
+        
+
+        <div class="dropdown" *ngIf="isPMSAdmin()" > 
+          <a class="nav-item nav-link dropdown-toggle" id="officeDropdown"
+           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
+            PMS</a>
+          <div class="dropdown-menu" aria-labelledby="officeDropdown">
+            <a class="dropdown-item"  [routerLink]="['/manageUsers']">Manage Client</a>
+   
+          </div>
+        </div>
+
+
               
        <div class="input-group w-25">
         <input id="searchInput" class="form-control" type="search" placeholder="Search" aria-label="Search"  
