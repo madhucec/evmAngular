@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../Services/AuthService';
+import { AuthService } from '../auth/AuthService';
 
 @Component({
   selector: 'pm-unauthorized',

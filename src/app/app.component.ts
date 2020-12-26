@@ -1,7 +1,7 @@
 
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import {RouterModule} from '@angular/router'
-import { AuthService } from './Services/AuthService';
+import { AuthService } from './auth/AuthService';
 
 
 @Component({

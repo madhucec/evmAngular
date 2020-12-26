@@ -57,6 +57,21 @@ export class AuthService {
     });
   }
 
+  initAuthSession(): Promise<any> {
+    return this.userManager.getUser().then((user) => {
+      this.user = user;
+      if (!user || user.expired) {
+        return this.userManager.signinRedirect();
+      } else {
+        if (!this.authContext) {
+          return this.getAuthContext();
+        }
+      }
+    });
+  }
+  getAuthContext(): any {
+    return this.authContext;
+  }
 
   isLoggedIn(): Promise<boolean> {
     return this.userManager.getUser().then(user => {
