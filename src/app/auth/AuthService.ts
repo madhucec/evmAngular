@@ -17,7 +17,7 @@ export class AuthService {
   constructor(private httpClient:HttpClient) {
     const idpSettings = {
       authority: AuthConstants.stsAuthority,
-      client_id: 'pms',
+      client_id: AuthConstants.clientId,
       redirect_uri: `${AuthConstants.clientRoot}signin-callback`,
       scope: 'openid profile',
       response_type: 'code',

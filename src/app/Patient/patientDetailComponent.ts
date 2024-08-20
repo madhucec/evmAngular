@@ -70,7 +70,7 @@ export class PatientDetailComponent{
     bookAppointment(): void{
         this.dateAppointment= new DatePipe('en-US').transform(this.dateAppointment, 'MM-dd-yyyy')
         
-        console.log(this.dateAppointment+", "+this.staffId+", "+this.startTime+","+ this.endTime+", "+this.patient.id)
+        
          this.bookingService.bookAppointment(this.dateAppointment, this.staffId, this.startTime, this.endTime, this.patient.id).
          subscribe(  result=>this.onHttpSuccess(result),
          httpResponseError=>this.onHttpError(httpResponseError) ); 

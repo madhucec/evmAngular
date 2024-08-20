@@ -8,11 +8,11 @@ import { AuthConstants } from '../AuthConstants';
 
 @Injectable({providedIn:'root'})
 export class PatientService{
-  patientservieRootUrl=AuthConstants.apiRoot+AuthConstants.patientService+'patient/';
+  patientservieRootUrl=AuthConstants.apiRoot+AuthConstants.patientService+'patient';
 
-    patientSearchUrl= this.patientservieRootUrl +  'search';
-    patientDetailUrl= this.patientservieRootUrl+"details";
-    patientRegisterUrl= this.patientservieRootUrl+"register";
+    patientSearchUrl= this.patientservieRootUrl +"/search";
+    patientDetailUrl= this.patientservieRootUrl;
+    patientRegisterUrl= this.patientservieRootUrl;
 
     constructor(private httpClient: HttpClient){
 

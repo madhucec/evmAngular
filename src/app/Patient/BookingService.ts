@@ -10,7 +10,7 @@ import { AuthConstants } from '../AuthConstants';
 export class BookingService{
 
 
-    getCalenderUrl= AuthConstants.apiRoot+"calender";
+    getCalenderUrl= AuthConstants.apiRoot+AuthConstants.patientService+"calender";
     bookAppointmentUrl= AuthConstants.apiRoot+"book";
 
     constructor(private httpClient: HttpClient){
@@ -31,7 +31,7 @@ export class BookingService{
       let  bookrequest= new BookRequest(staffId, patientId+'', date, startTime, endTime);
           
     
-        return this.httpClient.post(this.bookAppointmentUrl, bookrequest);
+        return this.httpClient.post(this.getCalenderUrl, bookrequest);
 
 
     }
